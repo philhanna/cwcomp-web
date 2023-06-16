@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  #app-id {
+    background: linear-gradient(#FFFFFF,#607D8B);
+    margin: 0
+  }
+  
+  #app-id > img {
+    height: 75px;
+    border-radius: 20%;
+  }
+  
+  #app-id > span {
+    margin-top: 0;
+    margin-left: 8px;
+    font-size: 30px;
+    font-family: Verdana, sans-serif;
+    color: #080027; 
+  }
+  
+  .mb {
+    padding-top: 10px;
+  }
+  
