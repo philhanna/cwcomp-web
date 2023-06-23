@@ -36,8 +36,8 @@ const LoginForm = () => {
         formData.append('password', formValues.password);
         const postData = formData.toString();
         const host = "localhost"
-        const port = 5030
-        const postURL = `http://${host}:${port}`
+        const port = 5053
+        const postURL = `http://${host}:${port}/login`
         fetch(postURL, {
             method: 'POST',
             headers: {
