@@ -35,8 +35,8 @@ const LoginForm = () => {
         formData.append('username', formValues.username);
         formData.append('password', formValues.password);
         const postData = formData.toString();
-        const host = process.env.REACT_APP_REST_HOST
-        const port = process.env.REACT_APP_REST_PORT
+        const host = localhost
+        const port = 5030
         const postURL = `http://${host}:${port}`
         fetch(postURL, {
             method: 'POST',
