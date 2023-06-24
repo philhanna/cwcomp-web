@@ -45,10 +45,10 @@ const LoginForm = () => {
                 'Access-Control-Allow-Origin': '*',
                 'Credentials': "include",
             },
-            body: JSON.stringify({ username: 'username', password: 'password' })
+            body: JSON.stringify({ username: formValues.username, password: formValues.password })
         })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => console.log(data)) // TODO handle this for real
             .catch(error => console.error(error));
     };
 
