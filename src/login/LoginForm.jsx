@@ -5,7 +5,7 @@ import LoginSubmit from "./LoginSubmit"
 import LoginRegister from "./LoginRegister"
 import LoginError from "./LoginError"
 import RESTURL from "./HostAndPort"
-import MenuBar from "../menu/MenuBar"
+import Home from "../home/Home"
 
 export const LoginContext = createContext()
 
@@ -75,17 +75,17 @@ const LoginForm = () => {
             })
     }
 
-    return (
-        <LoginContext.Provider
-            value={{
-                username,
-                password,
-                handleUsernameChange,
-                handlePasswordChange,
-            }}>
-            {isLoggedIn ?
-                <MenuBar />
-                :
+    if (isLoggedIn) {
+        return <Home />
+    } else {
+        return (
+            <LoginContext.Provider
+                value={{
+                    username,
+                    password,
+                    handleUsernameChange,
+                    handlePasswordChange,
+                }}>
                 <form className="w3-margin-left w3-margin-right w3-border" onSubmit={handleSubmit}>
                     <div className="w3-blue-gray w3-center">
                         <h3 className="w3-center w3-blue-gray" style={{ marginTop: 0 }}>Login</h3>
@@ -95,12 +95,12 @@ const LoginForm = () => {
                         <LoginPassword />
                         <LoginSubmit />
                         <LoginRegister />
-                        <LoginError errmsg={error}/>
+                        <LoginError errmsg={error} />
                     </div>
                 </form>
-            }
-        </LoginContext.Provider>
-    )
+            </LoginContext.Provider>
+        )
+    }
 }
 
 export default LoginForm
