@@ -55,6 +55,7 @@ const LoginForm = () => {
 
         fetch(url, {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
