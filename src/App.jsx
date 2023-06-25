@@ -1,11 +1,11 @@
 import React from "react"
 import "./App.css"
-import LoginDialog from "./components/LoginDialog"
+import LoginDialog from "./login/LoginDialog"
 
 function App() {
-  return (
-    <LoginDialog />
-  )
+    return (
+        <LoginDialog />
+    )
 }
 
 export default App
