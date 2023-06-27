@@ -32,3 +32,7 @@ h1 {
 .mb {
 	padding-top: 10px;
 }
+
+input {
+    border-radius: 12px;
+}
