@@ -71,7 +71,7 @@ const LoginForm = () => {
                 }
             })
             .catch(error => {
-                alert(`ERROR: ${error}`)
+                alert(`ERROR: type of error is ${typeof(error)}, error=${error}`)
                 // TODO must be a better way to do this
             })
     }
