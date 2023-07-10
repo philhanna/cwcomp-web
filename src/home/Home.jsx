@@ -1,4 +1,5 @@
 import React from "react"
+import MenuBar from "../menu/MenuBar"
 
 // The home component is the full HTML page with the logo, the heading, and the menus
 
@@ -11,6 +12,7 @@ const Home = () => {
                     width="80px" />
                 <span className="w3-padding">Crossword Composer</span>
             </h1>
+            <MenuBar />
         </div>
     )
 }
