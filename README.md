@@ -5,5 +5,5 @@
 
 ## Overview
 Crossword Composer is an application that allows you to create and edit crossword puzzles.
-This repository contains `React.js` code to run the application in a web browser.
+This repository contains `jQuery.js` code to run the application in a web browser.
 The server-side repository is https://github.com/philhanna/cwcomp
