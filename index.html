@@ -6,12 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
+
         $("#mozart").click(create_menus);
-        function create_menus() {
-          create_menu("Grid");
-          create_menu("Puzzle");
-          create_help_menu();
-        }
 
         function create_help_menu() {
           $("#menubar").append(
@@ -22,13 +18,22 @@
         function create_menu(name) {
           let elem = document.createElement("div");
           elem.setAttribute("class", "w3-dropdown-hover w3-blue-gray");
+
           let elemButton = document.createElement("button");
           elemButton.setAttribute("id", `btn + ${name}`);
           elemButton.setAttribute("class", "w3-button");
           elem.appendChild(elemButton)
+
           let text = document.createTextNode(`${name}`);
           elemButton.appendChild(text);
           $("#menubar").append(elem)
+        }
+        
+        function create_menus() {
+          create_menu("Grid");
+          create_menu("Puzzle");
+          create_menu("Publish");
+          create_help_menu();
         }
  
       });
