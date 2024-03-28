@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Grid",
+    "items": [
+      {
+        "id": "mnuGridNew",
+        "label": "New grid...",
+        "enabled": true
+      },
+      {
+        "id": "mnuGridNewFromPuzzle",
+        "label": "New grid from puzzle...",
+        "enabled": true
+      },
+      {
+        "id": "mnuGridOpen",
+        "label": "Open grid...",
+        "enabled": true
+      },
+      {
+        "id": "mnuGridOpen",
+        "label": "Open grid...",
+        "enabled": true
+      },
+      {
+        "id": "mnuGridSave",
+        "label": "Save grid",
+        "enabled": false
+      },
+      {
+        "id": "mnuGridSaveAs",
+        "label": "Save grid as...",
+        "enabled": false
+      },
+      {
+        "id": "mnuGridClose",
+        "label": "Close grid",
+        "enabled": false
+      },
+      {
+        "id": "mnuGridDelete",
+        "label": "Delete grid",
+        "enabled": false
+      }
+    ]
+  },
+  {
+    "name": "Puzzle"
+  }
+]
