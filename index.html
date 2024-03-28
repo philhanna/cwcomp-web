@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>Crossword Composer</title>
@@ -7,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
+        $("#mozart").click(create_menus);
         function create_menus() {
           create_grid_menu();
           create_puzzle_menu();
@@ -14,6 +14,9 @@
         function create_grid_menu() {
           $("#menubar").append(
             "<div id='grid' class='w3-dropdown-hover w3-blue-gray'></div>"
+          );
+          $("#grid").append(
+            "<button>Hello</button>"
           );
         }
         function create_puzzle_menu() {
@@ -28,16 +31,14 @@
     <div class="w3-container w3-padding">
       <h1>
         <img
-          id="mozart" onclick="create_menus"
+          id="mozart"
           alt="Mozart looking at crossword puzzle"
           src="https://github.com/philhanna/cwcomp/assets/3708685/ae96d3ed-36c0-47e1-b948-f3614058385e"
           width="80px"
         />
         <span class="w3-padding">Crossword Composer</span>
       </h1>
-      <div id="menubar" class="w3-bar w3-blue-gray mb">
-
-      </div>
+      <div id="menubar" class="w3-bar w3-blue-gray mb"></div>
     </div>
   </body>
 </html>
