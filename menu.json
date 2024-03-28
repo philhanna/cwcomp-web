@@ -9,16 +9,6 @@
         "enabled": true
       },
       {
-        "id": "mnuGridNewFromPuzzle",
-        "label": "New grid from puzzle...",
-        "enabled": true
-      },
-      {
-        "id": "mnuGridOpen",
-        "label": "Open grid...",
-        "enabled": true
-      },
-      {
         "id": "mnuGridOpen",
         "label": "Open grid...",
         "enabled": true

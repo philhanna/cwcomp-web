@@ -38,6 +38,7 @@
         function create_menu(mnu) {
 
           let name = mnu.name;
+          let items = mnu.items;
 
           // Create the menu element (elem)
           let elem = document.createElement("div");
@@ -64,8 +65,8 @@
 
           // Add the menu items
 
-          for (var i = 0; i < mnu.items.length; i++) {
-            let mnuItem = mnu.items[i];
+          for (var i = 0; i < items.length; i++) {
+            let mnuItem = items[i];
             let elem = create_menu_item(mnuItem);
             elemDrop.appendChild(elem);
           }
@@ -74,7 +75,7 @@
         }
 
         //==============================================================
-        //  create_menu_item:   Creates a single menu item
+        //  create_menu_item: Creates a single menu item.
         //
         //  Parameters: mnuItem - a JSON object described below
         //
@@ -86,22 +87,31 @@
         //==============================================================
 
         function create_menu_item(mnuItem) {
-          var classNames = "w3-bar-item w3-button";
-          if (mnuItem.enabled == false) {
-            classNames += " w3-disabled";
-          }
+          let id = mnuItem.id;
+          let label = mnuItem.label;
+          let enabled = mnuItem.enabled;
 
           let elem = document.createElement("a");
-          elem.setAttribute("id", mnuItem.id);
+          elem.setAttribute("id", id);
+          var classNames = "w3-bar-item w3-button";
+          if (enabled == false) {
+            classNames += " w3-disabled";
+          }
           elem.setAttribute("class", classNames);
 
-          let text = document.createTextNode(mnuItem.label);
+          let text = document.createTextNode(label);
           elem.appendChild(text);
 
           return elem;
         }
 
+        //==============================================================
+        //  create_menus: Creates the menus from the menu.json object
+        //==============================================================
+
         function create_menus() {
+
+          // Everything but the "help" menu
           $.getJSON("menu.json", function (data) {
             let root = data["menudata"];
             for (var i = 0; i < root.length; i++) {
@@ -110,10 +120,13 @@
               $("#menubar").append(elemMnu);
             }
           });
+
+          // The "help" menu
           create_help_menu();
         }
       });
     </script>
+
   </head>
   <body>
     <div class="w3-container w3-padding">
