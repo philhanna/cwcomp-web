@@ -9,12 +9,18 @@
 
         $("#mozart").click(create_menus);
 
+        //  ===========================================================
+        //  create_help_menu: Creates the "help" menu
+        //  ===========================================================
         function create_help_menu() {
           $("#menubar").append(
             '<a class="w3-bar-item w3-button w3-right" href="https://github.com/philhanna/crossword/wiki">Help</a>'
           );
         }
 
+        //  ===========================================================
+        //  create_menu: Creates a menu on the menu bar
+        //  ===========================================================
         function create_menu(name) {
           let elem = document.createElement("div");
           elem.setAttribute("class", "w3-dropdown-hover w3-blue-gray");
@@ -26,13 +32,48 @@
 
           let text = document.createTextNode(`${name}`);
           elemButton.appendChild(text);
-          $("#menubar").append(elem)
+
+          let elemDrop = document.createElement("div");
+          elemDrop.setAttribute("id", `drop + ${name}`);
+          elemDrop.setAttribute("class", "w3-dropdown-content w3-bar-block w3-card-4");
+          elem.appendChild(elemDrop)
+
+          return [elem, elemDrop];
+        }
+
+        function create_menu_item(mnuItem) {
+          var classNames = "w3-bar-item w3-button";
+          
+          let elem = document.createElement("div");
+          
+          let elemA = document.createElement("a");
+          elemA.setAttribute("id", mnuItem.id)
+          elemA.setAttribute("class", classNames);
+          elem.appendChild(elemA)
+
+          let text = document.createTextNode(mnuItem.label)
+          elemA.appendChild(text)
+
+          return elem
         }
         
         function create_menus() {
-          create_menu("Grid");
-          create_menu("Puzzle");
-          create_menu("Publish");
+          $.getJSON("menu.json", function(data) {
+            let root = data["menudata"];
+            for (var i = 0; i < root.length; i++) {
+              let mnu = root[i];
+              let elemMnuTuple = create_menu(mnu.name);
+              let elemMnu = elemMnuTuple[0]
+              let elemDrop = elemMnuTuple[1]
+              $("#menubar").append(elemMnu)
+
+              for (var j = 0; j < mnu.items.length; j++) {
+                let mnuItem = mnu.items[j];
+                let elemMnuItem = create_menu_item(mnuItem);
+                elemDrop.appendChild(elemMnuItem);
+              }
+            }
+          });
           create_help_menu();
         }
  
