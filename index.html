@@ -8,22 +8,29 @@
       $(document).ready(function () {
         $("#mozart").click(create_menus);
         function create_menus() {
-          create_grid_menu();
-          create_puzzle_menu();
+          create_menu("Grid");
+          create_menu("Puzzle");
+          create_help_menu();
         }
-        function create_grid_menu() {
+
+        function create_help_menu() {
           $("#menubar").append(
-            "<div id='grid' class='w3-dropdown-hover w3-blue-gray'></div>"
-          );
-          $("#grid").append(
-            "<button>Hello</button>"
+            '<a class="w3-bar-item w3-button w3-right" href="https://github.com/philhanna/crossword/wiki">Help</a>'
           );
         }
-        function create_puzzle_menu() {
-          $("#menubar").append(
-            "<div id='puzzle' class='w3-dropdown-hover w3-blue-gray'></div>"
-          );
+
+        function create_menu(name) {
+          let elem = document.createElement("div");
+          elem.setAttribute("class", "w3-dropdown-hover w3-blue-gray");
+          let elemButton = document.createElement("button");
+          elemButton.setAttribute("id", `btn + ${name}`);
+          elemButton.setAttribute("class", "w3-button");
+          elem.appendChild(elemButton)
+          let text = document.createTextNode(`${name}`);
+          elemButton.appendChild(text);
+          $("#menubar").append(elem)
         }
+ 
       });
     </script>
   </head>
