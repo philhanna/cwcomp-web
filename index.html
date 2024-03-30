@@ -3,12 +3,12 @@
   <head>
     <title>Crossword Composer</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="cwcomp.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="cwcomp.js">
-    </script>
+    <script src="cwcomp.js"></script>
   </head>
   <body>
-    <div class="w3-container w3-padding">
+    <div class="w3-container w3-padding" style="display:none">
       <h1>
         <img
           id="mozart"
@@ -19,6 +19,35 @@
         <span class="w3-padding">Crossword Composer</span>
       </h1>
       <div id="menubar" class="w3-bar w3-blue-gray mb"></div>
+    </div>
+    <div id="lgn" class="w3-display-topmiddle">
+      <form class="w3-margin-left w3-margin-right w3-border">
+        <div class="w3-blue-gray w3-center">
+          <h3 class="w3-center w3-blue-gray" style="padding-top: 0">Login</h3>
+        </div>
+        <div class="w3-container">
+          <div class="w3-bar-block">
+            <label class="w3-bar-item" htmlFor="username">
+              <b>Username:</b>
+            </label>
+            <input id="lgnUserName" className="w3-bar-item w3-border w3-margin-left w3-margin-right"
+            autoFocus
+            type="text"
+            placeholder="Enter username"
+            name="username"
+            required
+            onChange="handleUsernameChange"
+        </input>
+
+          </div>
+          <!--
+            <LoginPassword />
+            <LoginSubmit />
+            <LoginRegister />
+            <LoginError errmsg={error} />
+          -->
+        </div>
+      </form>
     </div>
   </body>
 </html>
