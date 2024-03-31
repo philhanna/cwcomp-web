@@ -2,6 +2,6 @@
     padding-top: 50px;
 }
 
-#lgnUserName {
+#lgnUserName, #lgnPassword {
     width: 300px;
 }
