@@ -2,6 +2,11 @@
     padding-top: 50px;
 }
 
+#lgnHeading {
+    margin-top: 0;
+    
+}
+
 #lgnUserName, #lgnPassword {
     width: 300px;
 }
