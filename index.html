@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+  <!-- Head -->
   <head>
     <title>Crossword Composer</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -7,25 +9,43 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="cwcomp.js"></script>
   </head>
+
+  <!-- Body -->
   <body>
     <div class="w3-container w3-padding" style="display:none">
       <h1>
+
+        <!-- Image -->
         <img
           id="mozart"
           alt="Mozart looking at crossword puzzle"
           src="https://github.com/philhanna/cwcomp/assets/3708685/ae96d3ed-36c0-47e1-b948-f3614058385e"
           width="80px"
         />
+
+        <!-- Title -->
         <span class="w3-padding">Crossword Composer</span>
       </h1>
+
+      <!-- Menubar -->
       <div id="menubar" class="w3-bar w3-blue-gray mb"></div>
     </div>
+
+    <!-- Login dialog -->
     <div id="lgn" class="w3-display-topmiddle">
+
+      <!-- Login form -->
       <form class="w3-margin-left w3-margin-right w3-border">
+
+        <!-- Heading -->
         <div class="w3-blue-gray w3-center">
           <h3 class="w3-center w3-blue-gray">Login</h3>
         </div>
+
+        <!-- Input fields -->
         <div class="w3-container">
+
+          <!-- Username -->
           <div class="w3-bar-block">
             <label class="w3-bar-item" htmlFor="username">
               <b>Username:</b>
@@ -39,6 +59,8 @@
                 onChange="handleUsernameChange"
             </input>
           </div>
+
+          <!-- Password -->
           <div class="w3-bar-block">
             <label class="w3-bar-item" htmlFor="password">
                 <b>Password:</b>
@@ -51,18 +73,25 @@
                 onChange={handlePasswordChange}
             </input>
           </div>
+
+          <!-- Submit button -->
           <div id="lgnSubmit" class="w3-container w3-bar-block w3-center w3-padding-16" >
             <button type="submit" class="w3-button w3-round-large w3-gray w3-block">
                 Login
             </button>
           </div >
+
+          <!-- Register link -->
           <div id="lgnRegister" class="w3-container w3-center w3-margin-bottom">
             <span>Don't have an account? </span>
             <a href="/register">Register</a>
           </div>
+
+          <!-- Error message -->
           <div id="lgnError" class="w3-text-red" style="display:none">
             <p id="lgnErrmsg"></p>
           </div>
+
         </div>
       </form>
     </div>
